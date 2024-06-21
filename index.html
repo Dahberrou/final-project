@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>by Dahberrou</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Tracker - Nusa Putra University</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="initializePage()">
+    <header>
+        <img src="logo.png" alt="Nusa Putra University Logo" class="logo">
+        <h1>Welcome to Nusa Putra University</h1>
+        <h2>Little Steps for Wide Vision</h2>
+        <p>Address: Jl. Raya Cibolang No.21 Cisaat Sukabumi 43152 Indonesia</p>
+        <p>Email: info@nusaputra.ac.id | Phone: +62 821-8888-9903, +62 821-8888-9904</p>
+    </header>
+    <nav>
+        <ul>
+            <li>About</li>
+            <li>Academic</li>
+            <li>Research</li>
+            <li>Event</li>
+            <li>News</li>
+            <li>Admissions</li>
+        </ul>
+    </nav>
+    <main>
+        <button onclick="showSection('markAttendance')">Mark Attendance</button>
+        <button onclick="showSection('attendanceList')">Attendance List</button>
+        <button onclick="showSection('registeredStudents')">Registered Students</button>
+        <button onclick="showSection('absentStudents')">Absent Students</button>
+
+        <section id="markAttendance">
+            <h2>Mark Attendance</h2>
+            <form id="attendanceForm">
+                <label for="specialization">Specialization:</label>
+                <select id="specialization" onchange="loadClasses()">
+                    <option value="">Select Specialization</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="Information Engineering">Information Engineering</option>
+                    <option value="Management">Management</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="Law">Law</option>
+                </select>
+
+                <label for="class">Class:</label>
+                <select id="class" onchange="loadSubjects()">
+                    <option value="">Select Class</option>
+                </select>
+
+                <label for="subject">Subject:</label>
+                <select id="subject">
+                    <option value="">Select Subject</option>
+                </select>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" readonly>
+
+                <div id="studentList"></div>
+            </form>
+        </section>
+
+        <section id="attendanceList">
+            <h2>Attendance List</h2>
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Specialization</th>
+                        <th>Class</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button onclick="printAttendance()">Print</button>
+        </section>
+
+        <section id="registeredStudents">
+            <h2>Registered Students</h2>
+            <div id="studentsList"></div>
+        </section>
+
+        <section id="absentStudents">
+            <h2>Absent Students</h2>
+            <div id="absentList"></div>
+        </section>
+    </main>
+    <footer>
+        <p>This site was built by Dah Berrou, a student at Nusa Putra University. An experimental site to improve and facilitate attendance tracking at the university, monitor student attendance, and enhance attention to course materials. This project is part of my final exam.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
